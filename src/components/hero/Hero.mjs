@@ -3,7 +3,7 @@ import Typewriter from "typewriter-effect";
 
 import { Container } from "../common/Container.mjs";
 import { ScrollPrompt } from "./ScrollPrompt.mjs";
-import { TypeingContent } from "../../Content.mjs";
+import { TypingContent } from "../../Content.mjs";
 import { mdScreen, lgScreen } from "../../themes/theme.mjs";
 import HeadShot from "../../assets/head-shot.png";
 
@@ -20,7 +20,7 @@ export const Hero = (props) => {
           <h1 id="action-text">
             <Typewriter
               options={{
-                strings: TypeingContent,
+                strings: TypingContent,
                 autoStart: true,
                 loop: true,
               }}
