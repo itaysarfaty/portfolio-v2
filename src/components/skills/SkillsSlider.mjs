@@ -57,8 +57,10 @@ const Wrapper = styled.div`
     animation-delay: var(--animation-delay);
   }
 
-  /* .skills-box:hover .skills-list {
-    animation-play-state: paused;
+  /* @media (hover: hover) {
+    :hover .skills-list {
+      animation-play-state: paused;
+    }
   } */
 
   .gradient {

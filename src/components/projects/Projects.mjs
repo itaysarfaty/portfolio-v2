@@ -1,17 +1,19 @@
 // Import Swiper React components
-import { Navigation } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
 import styled from "styled-components";
+import { useState } from "react";
 import { MdArrowBack, MdArrowForward } from "react-icons/md/index.js";
 
 import { Container } from "../common/Container.mjs";
 import { ProjectCard } from "./ProjectCard.mjs";
 import { Box } from "../common/Box.mjs";
 import { Button } from "../common/Button.mjs";
-// Import Swiper styles
-import "swiper/css";
 import { smScreen } from "../../themes/theme.mjs";
-import { useState } from "react";
+import { myProjects } from "../../Content.mjs";
+
+// Swiper Imports
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper";
+import "swiper/css";
 
 export const Projects = () => {
   const [my_swiper, set_my_swiper] = useState({});
@@ -40,7 +42,6 @@ export const Projects = () => {
               </div>
             </div>
           </Box>
-
           <div className="swiper-pads">
             <Swiper
               modules={[Navigation]}
@@ -54,15 +55,15 @@ export const Projects = () => {
                 set_my_swiper(ev);
               }}
             >
-              <SwiperSlide>
-                <ProjectCard />
-              </SwiperSlide>
-              <SwiperSlide>
-                <ProjectCard />
-              </SwiperSlide>
-              <SwiperSlide>
-                <ProjectCard />
-              </SwiperSlide>
+              {myProjects.map((project) => (
+                <SwiperSlide>
+                  <ProjectCard
+                    title={project.title}
+                    type={project.type}
+                    action={project.action}
+                  />
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
         </div>
