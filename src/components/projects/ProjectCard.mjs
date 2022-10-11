@@ -1,16 +1,16 @@
 import styled from "styled-components";
 import { Button } from "../common/Button.mjs";
 import { mdScreen, smScreen } from "../../themes/theme.mjs";
-export const ProjectCard = () => {
+export const ProjectCard = (props) => {
   return (
     <Wrapper>
       <div className="card">
         <div className="content">
           <div className="info">
-            <h1>J Portal</h1>
-            <p>Relational Database Design</p>
+            <h1>{props.title}</h1>
+            <p>{props.type}</p>
           </div>
-          <Button className="cta" label="Open" />
+          <Button className="cta" label="Open" onClick={props.action} />
         </div>
       </div>
     </Wrapper>
