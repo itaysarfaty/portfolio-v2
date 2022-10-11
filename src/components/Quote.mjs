@@ -18,7 +18,7 @@ export const Quote = () => {
 
 const Wrapper = styled.section`
   .hero {
-    height: calc(100vh - ${({ theme }) => theme.navBarHeight} - 200px);
+    height: calc(100vh - ${({ theme }) => theme.navBarHeight} - 160px);
     display: flex;
     align-items: center;
     min-height: 400px;

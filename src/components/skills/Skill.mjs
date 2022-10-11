@@ -1,15 +1,15 @@
 import styled from "styled-components";
-import { ImCheckmark } from "react-icons/im/index.js";
+import { GoCheck } from "react-icons/go/index.js";
 
 export const Skill = ({ label }) => {
   return (
     <Wrapper>
-      <ImCheckmark style={style} />
+      <GoCheck style={style} />
       <p id="label">{label}</p>
     </Wrapper>
   );
 };
-const style = { fontSize: "1.3em", marginRight: "20px" };
+const style = { fontSize: "1.2em", marginRight: "20px" };
 
 const Wrapper = styled.div`
   width: fit-content;

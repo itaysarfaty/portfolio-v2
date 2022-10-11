@@ -2,7 +2,7 @@ import { Navbar } from "../components/navigation/Navbar.mjs";
 import { Hero } from "../components/hero/Hero.mjs";
 import { Education } from "../components/Education.mjs";
 import { Skills } from "../components/skills/Skills.mjs";
-import { Projects } from "../components/Projects.mjs";
+import { Projects } from "../components/projects/Projects.mjs";
 import { Socials } from "../components/Socials.mjs";
 import { Quote } from "../components/Quote.mjs";
 import { Footer } from "../components/Footer.mjs";
@@ -30,23 +30,35 @@ export const App = () => {
   const quoteRef = useRef(null);
   const quote = useIsInViewport(quoteRef);
 
+  const firsScroll = useRef(null);
+
   const scrollOptions = { behavior: "smooth" };
   const scrollTo = {
     about: () => aboutRef.current.scrollIntoView(scrollOptions),
     projects: () =>
       projectsRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
+        ...scrollOptions,
+        ...{ block: "center" },
       }),
     quote: () => quoteRef.current.scrollIntoView(scrollOptions),
   };
+
   return (
     <HelmetProvider>
       <ThemeProvider theme={theme(isDarkTheme)}>
         <Navbar sectionState={{ about, projects, quote }} scrollTo={scrollTo} />
         <section ref={aboutRef} className="about">
-          <Hero />
+          <Hero
+            scrollHandler={() =>
+              firsScroll.current.scrollIntoView({
+                ...scrollOptions,
+                ...{ block: "end" },
+              })
+            }
+          />
           <Education />
+          <div ref={firsScroll} />
+
           <Skills />
         </section>
         <section ref={projectsRef} className="projects">

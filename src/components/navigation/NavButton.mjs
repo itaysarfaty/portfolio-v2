@@ -16,7 +16,10 @@ const Wrapper = styled.button`
     border-bottom: ${({ theme }) => theme.darkBorder};
   }
 
+  p {
+    transition: 0s all;
+  }
+
   border: none;
   background-color: transparent;
-  cursor: pointer;
 `;

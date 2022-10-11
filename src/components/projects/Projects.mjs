@@ -4,13 +4,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import styled from "styled-components";
 import { MdArrowBack, MdArrowForward } from "react-icons/md/index.js";
 
-import { Container } from "./common/Container.mjs";
-import { ProjectCard } from "../ProjectCard.mjs";
-import { Box } from "./common/Box.mjs";
-import { Button } from "./common/Button.mjs";
+import { Container } from "../common/Container.mjs";
+import { ProjectCard } from "./ProjectCard.mjs";
+import { Box } from "../common/Box.mjs";
+import { Button } from "../common/Button.mjs";
 // Import Swiper styles
 import "swiper/css";
-import { smScreen } from "../themes/theme.mjs";
+import { smScreen } from "../../themes/theme.mjs";
 import { useState } from "react";
 
 export const Projects = () => {
@@ -40,28 +40,31 @@ export const Projects = () => {
               </div>
             </div>
           </Box>
-          <Swiper
-            modules={[Navigation]}
-            navigation
-            slideToClickedSlide={true}
-            spaceBetween={15}
-            slidesPerView={1}
-            onSwiper={(swiper) => console.log(swiper)}
-            loop={true}
-            onInit={(ev) => {
-              set_my_swiper(ev);
-            }}
-          >
-            <SwiperSlide>
-              <ProjectCard />
-            </SwiperSlide>
-            <SwiperSlide>
-              <ProjectCard />
-            </SwiperSlide>
-            <SwiperSlide>
-              <ProjectCard />
-            </SwiperSlide>
-          </Swiper>
+
+          <div className="swiper-pads">
+            <Swiper
+              modules={[Navigation]}
+              navigation
+              slideToClickedSlide={true}
+              spaceBetween={15}
+              slidesPerView={1}
+              onSwiper={(swiper) => console.log(swiper)}
+              loop={true}
+              onInit={(ev) => {
+                set_my_swiper(ev);
+              }}
+            >
+              <SwiperSlide>
+                <ProjectCard />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProjectCard />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProjectCard />
+              </SwiperSlide>
+            </Swiper>
+          </div>
         </div>
       </Container>
     </Wrapper>
@@ -73,17 +76,22 @@ const Wrapper = styled.div`
   margin-top: 50px;
   overflow: hidden;
 
-  --bottom-padding: 30px;
   --btn-size: 50px;
+  --light-border: ${({ theme }) => theme.lightBorder};
 
+  .swiper-pads {
+    border: var(--light-border);
+    border-top: none;
+    border-radius: 0 0 15px 15px;
+  }
   .gallery {
     max-width: 100%;
   }
 
   .swiper-controller {
+    border-radius: 15px 15px 0 0;
     background-color: ${({ theme }) => theme.secondaryColor};
     border: ${({ theme }) => theme.darkBorder};
-    margin-bottom: var(--bottom-padding);
   }
 
   .controller-content {
@@ -121,7 +129,8 @@ const Wrapper = styled.div`
       flex-direction: column-reverse;
     }
     .swiper-controller {
-      padding-inline: 50px;
+      padding-left: 50px;
+      padding-right: 58px;
     }
 
     .controls {

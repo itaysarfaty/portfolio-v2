@@ -1,25 +1,57 @@
 import styled from "styled-components";
 import { Button } from "../common/Button.mjs";
 import { mdScreen } from "../../themes/theme.mjs";
+import { MdArrowDownward } from "react-icons/md/index.js";
+import { useEffect, useState } from "react";
 
-export const ScrollPrompt = () => {
+export const ScrollPrompt = (props) => {
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener("scroll", listenToScroll);
+    return () => window.removeEventListener("scroll", listenToScroll);
+  }, []);
+
+  const listenToScroll = () => {
+    let heightToHideFrom = 10;
+    const winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
+
+    if (winScroll > heightToHideFrom) {
+      isVisible && // to limit setting state only the first time
+        setIsVisible(false);
+    } else {
+      setIsVisible(true);
+    }
+  };
+
   return (
     <Wrapper>
-      <div className="scroll-prompt">
-        <div className="action">
-          <Button label="Scroll down" />
+      {isVisible && (
+        <div className="scroll-prompt">
+          <div className="btn-wrapper">
+            <Button className="scroll-btn" onClick={props.onClick}>
+              <MdArrowDownward style={arrowStyle} />
+            </Button>
+          </div>
         </div>
-        <div className="scroll-line" />
-      </div>
+      )}
     </Wrapper>
   );
 };
+
+const arrowStyle = { fontSize: "1.2em" };
 
 const Wrapper = styled.div`
   height: 100%;
   position: relative;
 
-  .scroll-prompt {
+  .scroll-btn {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-wrapper {
     position: absolute;
     left: 0;
     right: 0;
@@ -40,14 +72,9 @@ const Wrapper = styled.div`
     height: min-content;
   }
 
-  .scroll-line {
-    height: 100%;
-    border-right: ${({ theme }) => theme.lightBorder};
-  }
-
   @media (min-width: ${mdScreen}) {
     height: 140px;
-    .scroll-prompt {
+    .btn-wrapper {
       margin-right: 0;
     }
   }

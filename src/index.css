@@ -38,13 +38,11 @@ code {
 h1 {
   font-size: 28px;
   font-weight: 600;
-  transition: 200ms;
 }
 
 p {
   font-size: 18px;
   font-weight: 300;
-  transition: 200ms;
   line-height: 26px;
 }
 
@@ -53,8 +51,6 @@ input,
 button {
   font-size: 18px;
   font-weight: 300;
-
-  transition: 200ms;
 }
 
 @media (min-width: 480px) {
@@ -63,13 +59,13 @@ button {
   }
 
   p {
-    font-size: 24px;
+    font-size: 22px;
     line-height: 36px;
   }
 
   textarea,
   input,
   button {
-    font-size: 22px;
+    font-size: 20px;
   }
 }

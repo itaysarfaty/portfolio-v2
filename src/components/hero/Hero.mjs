@@ -7,7 +7,7 @@ import { TypeingContent } from "../../Content.mjs";
 import { mdScreen, lgScreen } from "../../themes/theme.mjs";
 import HeadShot from "../../assets/head-shot.png";
 
-export const Hero = () => {
+export const Hero = (props) => {
   return (
     <Wrapper>
       <Container className="hero">
@@ -27,7 +27,7 @@ export const Hero = () => {
             />
           </h1>
         </div>
-        <ScrollPrompt />
+        <ScrollPrompt onClick={props.scrollHandler} />
       </Container>
     </Wrapper>
   );
@@ -66,7 +66,7 @@ const Wrapper = styled.section`
     height: 100%;
     max-width: 250px;
     position: relative;
-    background-color: ${({ theme }) => theme.secondaryColor};
+    background-color: ${({ theme }) => theme.primaryColor};
     overflow: hidden;
     border: ${({ theme }) => theme.darkBorder};
     border-radius: 200px;
@@ -124,9 +124,6 @@ const Wrapper = styled.section`
   @media (min-width: ${lgScreen}) {
     .content {
       gap: 100px;
-    }
-    #action-text {
-      font-size: 55px;
     }
   }
 `;

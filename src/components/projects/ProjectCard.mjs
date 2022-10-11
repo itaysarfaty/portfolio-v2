@@ -1,27 +1,26 @@
 import styled from "styled-components";
-import { Box } from "./components/common/Box.mjs";
-import { Button } from "./components/common/Button.mjs";
-import { mdScreen } from "./themes/theme.mjs";
-
-export const ProjectCard = (props) => {
+import { Button } from "../common/Button.mjs";
+import { mdScreen, smScreen } from "../../themes/theme.mjs";
+export const ProjectCard = () => {
   return (
     <Wrapper>
-      <Box className="card">
+      <div className="card">
         <div className="content">
           <div className="info">
             <h1>J Portal</h1>
             <p>Relational Database Design</p>
           </div>
-          <Button className="cta" label="View project" />
+          <Button className="cta" label="Open" />
         </div>
-      </Box>
+      </div>
     </Wrapper>
   );
 };
+
 const Wrapper = styled.div`
   .card {
     height: 100%;
-    border: ${({ theme }) => theme.lightBorder};
+    padding: 50px;
   }
 
   .content {
@@ -34,8 +33,23 @@ const Wrapper = styled.div`
     text-align: center;
   }
 
+  .info > h1 {
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  .info > p {
+    font-weight: 200;
+  }
+
   .cta {
     margin-inline: auto;
+  }
+
+  @media (min-width: ${smScreen}) {
+    .info > h1 {
+      font-size: 28px;
+    }
   }
 
   @media (min-width: ${mdScreen}) {

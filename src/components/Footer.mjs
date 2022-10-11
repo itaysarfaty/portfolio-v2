@@ -7,9 +7,7 @@ export const Footer = (props) => {
   return (
     <Wrapper>
       <Container className="footer">
-        <h3>
-          Designed in <span>Adobe XD</span> Built with <span>React.js</span>
-        </h3>
+        <h3>Designed in Adobe XD Built with React.js</h3>
         <ToggleSwitch callBack={props.themeToggle} />
 
         <h3>© 2022 Itay Sarfaty</h3>
@@ -41,10 +39,6 @@ const Wrapper = styled.footer`
   .footer > h3 {
     font-size: 14px;
     font-weight: 300;
-  }
-
-  .footer > h3 > span {
-    font-weight: 400;
   }
 
   @media (min-width: ${mdScreen}) {

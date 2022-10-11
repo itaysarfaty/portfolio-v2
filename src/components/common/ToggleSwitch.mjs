@@ -31,12 +31,13 @@ const Wrapper = styled.label`
   gap: 15px;
   cursor: pointer;
   font-size: 14px;
+  font-weight: 300;
   width: fit-content;
   margin-inline: auto;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
   @media (min-width: ${mdScreen}) {
-    flex-direction: row-reverse;
+    flex-direction: row;
     margin-inline: 0;
   }
   .switch {
@@ -47,7 +48,7 @@ const Wrapper = styled.label`
     border: ${({ theme }) => theme.lightBorder};
     border-radius: 30px;
     padding: 4px;
-    transition: 250ms all;
+    transition: 600ms all;
 
     &:before {
       transition: 250ms all;

@@ -4,8 +4,8 @@ import { smScreen } from "../../themes/theme.mjs";
 export const Button = (props) => {
   return (
     <Wrapper className={props.className} onClick={props.onClick}>
-      {props.label}
       {props.children}
+      {props.label}
     </Wrapper>
   );
 };
@@ -16,14 +16,13 @@ const Wrapper = styled.button`
   height: 60px;
   border-radius: 100px;
   width: 100%;
-  cursor: pointer;
+  transition: 0s;
 
   filter: ${({ theme }) => theme.dropShadow};
 
   @media (hover: hover) {
     :hover {
-      transform: scale(0.97);
-      filter: drop-shadow(none);
+      border: ${({ theme }) => theme.lightBorder};
     }
   }
 
