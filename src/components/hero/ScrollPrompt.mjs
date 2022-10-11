@@ -13,7 +13,7 @@ export const ScrollPrompt = (props) => {
   }, []);
 
   const listenToScroll = () => {
-    let heightToHideFrom = 10;
+    let heightToHideFrom = 1;
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
 

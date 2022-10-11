@@ -3,9 +3,9 @@ import { Container } from "./common/Container.mjs";
 import { Box } from "./common/Box.mjs";
 import { smScreen } from "../themes/theme.mjs";
 
-export const Education = () => {
+export const Education = (props) => {
   return (
-    <Wrapper>
+    <Wrapper ref={props.setRef}>
       <Container>
         <Box title="Education">
           <Entry
