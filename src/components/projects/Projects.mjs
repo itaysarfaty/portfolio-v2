@@ -17,7 +17,6 @@ import "swiper/css";
 
 export const Projects = () => {
   const [my_swiper, set_my_swiper] = useState({});
-
   return (
     <Wrapper>
       <Container>
@@ -47,7 +46,9 @@ export const Projects = () => {
             navigation
             spaceBetween={0}
             slidesPerView={1}
-            loop={true}
+            cssMode={true}
+            speed={600}
+            loop={false}
             onInit={(ev) => {
               set_my_swiper(ev);
             }}
