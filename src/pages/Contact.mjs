@@ -56,7 +56,6 @@ const Wrapper = styled.section`
   }
 
   @media (max-width: 375px) {
-    background-color: red;
     .small-btn {
       display: block;
     }
