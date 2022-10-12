@@ -30,12 +30,12 @@ export const mySkills = [
 ];
 
 export const myProjects = [
-  new Project("My Portfolio", "React.js", () => openLink("/")),
-  new Project("Weight Management System", "Fullstack", () =>
+  new Project("My Portfolio", "React.js", () => {}),
+  new Project("Management System", "Fullstack", () =>
     openLink("https://github.com/itaysarfaty/FitTrack")
   ),
   new Project("Nutrition Coach", "Entity Relationship Diagram", () =>
-    openLink()
+    openLink("/jportal-erd.svg")
   ),
   new Project("The Kitchen Guy", "Gatsby.js", () =>
     openLink("https://portfolio.thekitchenguy.pro/")
