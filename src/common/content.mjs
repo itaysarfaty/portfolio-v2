@@ -29,6 +29,7 @@ export const mySkills = [
   "Adobe XD",
 ];
 
+// Test verified
 export const myProjects = [
   new Project("My Portfolio", "React.js", () => {}),
   new Project("Management System", "Fullstack", () =>
