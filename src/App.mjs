@@ -1,9 +1,10 @@
 import { ThemeProvider } from "styled-components";
-import { theme } from "./../themes/theme.mjs";
+import { theme } from "./themes/theme.mjs";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { lightTheme, darkTheme } from "./../themes/theme.mjs";
+import { lightTheme, darkTheme } from "./themes/theme.mjs";
 import { useState } from "react";
-import { Home } from "./Home.js";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./common/router.mjs";
 
 export const App = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(true);
@@ -12,10 +13,12 @@ export const App = () => {
     setIsDarkTheme(!isDarkTheme);
   };
 
+  const routerDependencies = { toggleTheme };
+
   return (
     <HelmetProvider>
       <ThemeProvider theme={theme(isDarkTheme)}>
-        <Home themeToggle={toggleTheme} />
+        <RouterProvider router={router(routerDependencies)} />
         <Helmet>
           <meta
             name="theme-color"

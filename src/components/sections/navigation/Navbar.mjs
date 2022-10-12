@@ -1,11 +1,13 @@
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
-import { Container } from "../common/Container.mjs";
+import { Container } from "../../common/Container.mjs";
 import { NavButton } from "./NavButton.mjs";
-import { Button } from "../common/Button.mjs";
-import { mdScreen } from "../../themes/theme.mjs";
+import { Button } from "../../common/Button.mjs";
+import { mdScreen } from "../../../themes/theme.mjs";
 
 export const Navbar = ({ sectionState, scrollTo }) => {
+  const navigate = useNavigate();
   return (
     <Wrapper>
       <Container className="nav-bar">
@@ -33,7 +35,13 @@ export const Navbar = ({ sectionState, scrollTo }) => {
             active={sectionState.quote}
           />
         </div>
-        <Button className="action-btn" label="Hire me" onClick={() => {}} />
+        <div className="btn-wrapper">
+          <Button
+            className="action-btn"
+            label="Hire me"
+            onClick={() => navigate("/contact", { replace: false })}
+          />
+        </div>
       </Container>
     </Wrapper>
   );
@@ -64,9 +72,13 @@ const Wrapper = styled.nav`
     gap: 10%;
   }
 
-  .action-btn {
+  .btn-wrapper {
+    width: 100%;
     max-width: 300px;
     margin-inline: auto;
+  }
+
+  .action-btn {
     background-color: ${({ theme }) => theme.primaryColor};
   }
 
@@ -74,7 +86,7 @@ const Wrapper = styled.nav`
     .sections {
       display: flex;
     }
-    .action-btn {
+    .btn-wrapper {
       margin-right: 0;
     }
   }

@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import Typewriter from "typewriter-effect";
 
-import { Container } from "../common/Container.mjs";
+import { Container } from "../../common/Container.mjs";
 import { ScrollPrompt } from "./ScrollPrompt.mjs";
-import { TypingContent } from "../../Content.mjs";
-import { mdScreen, lgScreen } from "../../themes/theme.mjs";
-import HeadShot from "../../assets/head-shot.png";
+import { TypingContent } from "../../../common/content.mjs";
+import { mdScreen, lgScreen } from "../../../themes/theme.mjs";
+import HeadShot from "../../../assets/head-shot.png";
 
 export const Hero = (props) => {
   return (
@@ -117,7 +117,6 @@ const Wrapper = styled.section`
       width: 100%;
       text-align: left;
       height: auto;
-      font-size: 45px;
     }
   }
 

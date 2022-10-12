@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { lgScreen } from "../themes/theme.mjs";
-import { Container } from "./common/Container.mjs";
+import { lgScreen } from "../../themes/theme.mjs";
+import { Container } from "./../common/Container.mjs";
 export const Quote = () => {
   return (
     <Wrapper>
@@ -45,16 +45,16 @@ const Wrapper = styled.section`
     .text {
       text-align: left;
       margin-left: 0;
-      max-width: 935px;
+      max-width: 700px;
     }
     .text > h1 {
-      font-size: 55px;
-      line-height: 100px;
+      font-size: 40px;
+      line-height: 60px;
       margin-bottom: 50px;
     }
 
     .text > h2 {
-      font-size: 36px;
+      font-size: 23px;
     }
   }
 `;

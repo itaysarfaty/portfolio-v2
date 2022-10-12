@@ -1,29 +1,21 @@
 import styled from "styled-components";
-import { smScreen } from "../../themes/theme.mjs";
+
+import { smScreen } from "../../../themes/theme.mjs";
 import { Skill } from "./Skill.mjs";
+import { mySkills } from "../../../common/content.mjs";
 
 export const SkillsSlider = () => {
   return (
     <Wrapper>
       <div className="skills-list">
-        <Skill label="Java Script" />
-        <Skill label="Python" />
-        <Skill label="Node.js" />
-        <Skill label="Docker" />
-        <Skill label="Express.js" />
-        <Skill label="React.js" />
-        <Skill label="UI/UX" />
-        <Skill label="Adobe XD" />
+        {mySkills.map((skill, i) => (
+          <Skill label={skill} key={i} />
+        ))}
       </div>
       <div className="skills-list delay">
-        <Skill label="Java Script" />
-        <Skill label="Python" />
-        <Skill label="Node.js" />
-        <Skill label="Docker" />
-        <Skill label="Express.js" />
-        <Skill label="React.js" />
-        <Skill label="UI/UX" />
-        <Skill label="Adobe XD" />
+        {mySkills.map((skill, i) => (
+          <Skill label={skill} key={i} />
+        ))}
       </div>
       <div className="gradient"></div>
     </Wrapper>
@@ -38,7 +30,7 @@ const Wrapper = styled.div`
   display: grid;
   align-items: center;
 
-  --animation-speed: 25s;
+  --animation-speed: ${2.7 * mySkills.length + "s"};
   --animation-delay: calc(var(--animation-speed) / 2);
 
   .skills-list {
@@ -47,7 +39,7 @@ const Wrapper = styled.div`
     justify-content: space-around;
     position: absolute;
     flex-shrink: 0;
-    width: 1600px;
+    width: ${170 * mySkills.length + "px"};
     animation: slide var(--animation-speed) linear infinite;
   }
 

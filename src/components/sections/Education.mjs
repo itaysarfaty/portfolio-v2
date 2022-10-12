@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Container } from "./common/Container.mjs";
-import { Box } from "./common/Box.mjs";
-import { smScreen } from "../themes/theme.mjs";
+import { Container } from "../common/Container.mjs";
+import { Box } from "../common/Box.mjs";
+import { smScreen } from "../../themes/theme.mjs";
 
 export const Education = (props) => {
   return (
@@ -45,10 +45,8 @@ const Wrapper = styled.section`
 export const Entry = ({ text, textStyle, children }) => {
   return (
     <StyledEntry>
-      <p className={textStyle}>
-        {text}
-        {children}
-      </p>
+      <p className={textStyle}>{text}</p>
+      {children}
     </StyledEntry>
   );
 };
@@ -57,6 +55,7 @@ const StyledEntry = styled.section`
   padding-block: 25px;
   display: grid;
   align-items: center;
+  width: 100%;
 
   background-color: ${({ theme }) => theme.secondaryColor};
   border: ${({ theme }) => theme.darkBorder};

@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { mdScreen } from "../themes/theme.mjs";
-import { Container } from "./common/Container.mjs";
-import { ToggleSwitch } from "./common/ToggleSwitch.mjs";
+import { mdScreen } from "../../themes/theme.mjs";
+import { Container } from "./../common/Container.mjs";
+import { ToggleSwitch } from "./../common/ToggleSwitch.mjs";
 
 export const Footer = (props) => {
   return (
@@ -44,7 +44,7 @@ const Wrapper = styled.footer`
   @media (min-width: ${mdScreen}) {
     .footer {
       display: flex;
-      flex-direction: row;
+      flex-direction: row-reverse;
       gap: none;
       justify-content: space-between;
     }

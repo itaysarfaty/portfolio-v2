@@ -1,29 +1,22 @@
 import styled from "styled-components";
-import { Button } from "../common/Button.mjs";
-import { mdScreen } from "../../themes/theme.mjs";
 import { MdArrowDownward } from "react-icons/md/index.js";
 import { useEffect, useState } from "react";
+
+import { Button } from "../../common/Button.mjs";
+import { mdScreen } from "../../../themes/theme.mjs";
 
 export const ScrollPrompt = (props) => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    window.addEventListener("scroll", listenToScroll);
-    return () => window.removeEventListener("scroll", listenToScroll);
-  }, []);
-
-  const listenToScroll = () => {
-    let heightToHideFrom = 1;
-    const winScroll =
-      document.body.scrollTop || document.documentElement.scrollTop;
-
-    if (winScroll > heightToHideFrom) {
-      isVisible && // to limit setting state only the first time
+    window.addEventListener("scroll", (event) => {
+      if (window.scrollY > 0) {
         setIsVisible(false);
-    } else {
-      setIsVisible(true);
-    }
-  };
+      } else {
+        setIsVisible(true);
+      }
+    });
+  }, []);
 
   return (
     <Wrapper>

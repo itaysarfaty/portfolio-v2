@@ -1,26 +1,24 @@
-import { Navbar } from "../components/navigation/Navbar.mjs";
-import { Hero } from "../components/hero/Hero.mjs";
-import { Education } from "../components/Education.mjs";
-import { Skills } from "../components/skills/Skills.mjs";
+import { Navbar } from "../components/sections/navigation/Navbar.mjs";
+import { Hero } from "../components/sections/hero/Hero.mjs";
+import { Education } from "../components/sections/Education.mjs";
+import { Skills } from "../components/sections/skills/Skills.mjs";
 import { Projects } from "../components/projects/Projects.mjs";
-import { Socials } from "../components/Socials.mjs";
-import { Quote } from "../components/Quote.mjs";
-import { Footer } from "../components/Footer.mjs";
+import { Socials } from "../components/sections/Socials.mjs";
+import { Quote } from "../components/sections/Quote.mjs";
+import { Footer } from "../components/sections/Footer.mjs";
 import { useRef } from "react";
 import { useIsInViewport } from "../hooks/isInViewPort.mjs";
 
 export const Home = (props) => {
-  // Keep track of what section is above the fold
   const aboutRef = useRef(null);
-  const about = useIsInViewport(aboutRef);
-
   const projectsRef = useRef(null);
-  const projects = useIsInViewport(projectsRef);
-
   const quoteRef = useRef(null);
-  const quote = useIsInViewport(quoteRef);
-
   const educationRef = useRef(null);
+
+  // Keep track of what section is above the fold
+  const about = useIsInViewport(aboutRef);
+  const projects = useIsInViewport(projectsRef);
+  const quote = useIsInViewport(quoteRef);
 
   const scrollOptions = { behavior: "smooth" };
   const scrollTo = {
@@ -31,22 +29,19 @@ export const Home = (props) => {
         ...{ block: "center" },
       }),
     quote: () => quoteRef.current.scrollIntoView(scrollOptions),
+    education: () =>
+      educationRef.current.scrollIntoView({
+        ...scrollOptions,
+        ...{ block: "center" },
+      }),
   };
 
   return (
     <>
       <Navbar sectionState={{ about, projects, quote }} scrollTo={scrollTo} />
       <section ref={aboutRef} className="about">
-        <Hero
-          scrollHandler={() =>
-            educationRef.current.scrollIntoView({
-              ...scrollOptions,
-              ...{ block: "center" },
-            })
-          }
-        />
+        <Hero scrollHandler={scrollTo.education} />
         <Education setRef={educationRef} />
-
         <Skills />
       </section>
       <section ref={projectsRef} className="projects">
@@ -57,7 +52,7 @@ export const Home = (props) => {
       <section ref={quoteRef} className="quote">
         <Quote />
       </section>
-      <Footer themeToggle={props.toggleTheme} />
+      <Footer themeToggle={props.themeToggle} />
     </>
   );
 };

@@ -8,7 +8,7 @@ import { ProjectCard } from "./ProjectCard.mjs";
 import { Box } from "../common/Box.mjs";
 import { Button } from "../common/Button.mjs";
 import { smScreen } from "../../themes/theme.mjs";
-import { myProjects } from "../../Content.mjs";
+import { myProjects } from "../../common/content.mjs";
 
 // Swiper Imports
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -21,51 +21,47 @@ export const Projects = () => {
   return (
     <Wrapper>
       <Container>
-        <div className="gallery">
-          <Box className="swiper-controller">
-            <div className="controller-content">
-              <h1>Projects</h1>
-              <p id="swipe-text">Swipe</p>
-              <div className="controls">
-                <Button
-                  className="slide-btn"
-                  onClick={() => my_swiper.slidePrev()}
-                >
-                  <MdArrowBack style={arrowStyle} />
-                </Button>
-                <Button
-                  className="slide-btn"
-                  onClick={() => my_swiper.slideNext()}
-                >
-                  <MdArrowForward style={arrowStyle} />
-                </Button>
-              </div>
+        <Box className="swiper-controller">
+          <div className="swiper-controller-content">
+            <h1>Projects</h1>
+            <p id="swipe-text">Swipe</p>
+            <div className="swiper-controller-controls">
+              <Button
+                className="control-btn"
+                onClick={() => my_swiper.slidePrev()}
+              >
+                <MdArrowBack style={arrowStyle} />
+              </Button>
+              <Button
+                className="control-btn"
+                onClick={() => my_swiper.slideNext()}
+              >
+                <MdArrowForward style={arrowStyle} />
+              </Button>
             </div>
-          </Box>
-          <div className="swiper-pads">
-            <Swiper
-              modules={[Navigation]}
-              navigation
-              slideToClickedSlide={true}
-              spaceBetween={15}
-              slidesPerView={1}
-              onSwiper={(swiper) => console.log(swiper)}
-              loop={true}
-              onInit={(ev) => {
-                set_my_swiper(ev);
-              }}
-            >
-              {myProjects.map((project) => (
-                <SwiperSlide>
-                  <ProjectCard
-                    title={project.title}
-                    type={project.type}
-                    action={project.action}
-                  />
-                </SwiperSlide>
-              ))}
-            </Swiper>
           </div>
+        </Box>
+        <div className="swiper-card-outline">
+          <Swiper
+            modules={[Navigation]}
+            navigation
+            spaceBetween={0}
+            slidesPerView={1}
+            loop={true}
+            onInit={(ev) => {
+              set_my_swiper(ev);
+            }}
+          >
+            {myProjects.map((project, i) => (
+              <SwiperSlide key={i}>
+                <ProjectCard
+                  title={project.title}
+                  type={project.type}
+                  action={project.action}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </Container>
     </Wrapper>
@@ -80,13 +76,10 @@ const Wrapper = styled.div`
   --btn-size: 50px;
   --light-border: ${({ theme }) => theme.lightBorder};
 
-  .swiper-pads {
+  .swiper-card-outline {
     border: var(--light-border);
     border-top: none;
     border-radius: 0 0 15px 15px;
-  }
-  .gallery {
-    max-width: 100%;
   }
 
   .swiper-controller {
@@ -95,12 +88,13 @@ const Wrapper = styled.div`
     border: ${({ theme }) => theme.darkBorder};
   }
 
-  .controller-content {
+  .swiper-controller-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
   }
-  .controls {
+  .swiper-controller-controls {
     display: none;
 
     gap: 15px;
@@ -110,7 +104,7 @@ const Wrapper = styled.div`
     font-weight: 200;
   }
 
-  .slide-btn {
+  .control-btn {
     height: var(--btn-size);
     width: var(--btn-size);
     display: grid;
@@ -119,22 +113,19 @@ const Wrapper = styled.div`
   }
 
   @media (max-width: 360px) {
-    .controller-content {
+    .swiper-controller-content {
       flex-direction: column;
       gap: 20px;
     }
   }
 
   @media (min-width: ${smScreen}) {
-    .gallery {
-      flex-direction: column-reverse;
-    }
     .swiper-controller {
       padding-left: 50px;
       padding-right: 58px;
     }
 
-    .controls {
+    .swiper-controller-controls {
       display: flex;
     }
     #swipe-text {

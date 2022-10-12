@@ -16,7 +16,6 @@ const Wrapper = styled.button`
   height: 60px;
   border-radius: 100px;
   width: 100%;
-  transition: 0s;
 
   filter: ${({ theme }) => theme.dropShadow};
 

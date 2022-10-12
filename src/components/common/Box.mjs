@@ -14,12 +14,13 @@ const Wrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 35px;
   height: fit-content;
   border: ${({ theme }) => theme.lightBorder};
   border-radius: ${({ theme }) => theme.borderRadius};
   text-align: center;
-  gap: 30px;
+  gap: 35px;
 
   @media (min-width: ${({ theme }) => theme.smScreen}) {
     padding-inline: 10%;

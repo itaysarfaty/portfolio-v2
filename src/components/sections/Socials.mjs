@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { Container } from "./common/Container.mjs";
-import { Box } from "./common/Box.mjs";
-import { Button } from "./common/Button.mjs";
-import { mdScreen } from "../themes/theme.mjs";
-import { openLink } from "../Utils.js";
+import { Container } from "./../common/Container.mjs";
+import { Box } from "./../common/Box.mjs";
+import { Button } from "./../common/Button.mjs";
+import { mdScreen } from "../../themes/theme.mjs";
+import { openLink } from "../../common/utils.js";
 import { SiBehance } from "react-icons/si/index.js";
 import { VscGithub } from "react-icons/vsc/index.js";
 import { GrLinkedinOption } from "react-icons/gr/index.js";
