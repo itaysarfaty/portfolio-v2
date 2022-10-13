@@ -30,7 +30,7 @@ export const mySkills = [
 ];
 
 export const myProjects = [
-  new Project("My Portfolio", "React.js", () => {}),
+  new Project("This Website", "React.js", () => {}),
   new Project("Management System", "Fullstack", () =>
     openLink("https://github.com/itaysarfaty/FitTrack")
   ),
