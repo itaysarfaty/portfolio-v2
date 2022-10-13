@@ -23,13 +23,13 @@ export const ContactPage = () => {
     <Wrapper>
       <Container className="contact-page">
         <Box className="contact-info" title="Email me">
-          <p>{copyState ? "Copied" : "Press to copy"}</p>
           <Button className="big-btn" label={myEmail} onClick={handleCopy} />
           <Button
             className="small-btn"
             label="Email"
             onClick={handleCopy}
           ></Button>
+          <p>{copyState ? "Copied" : "Press to copy"}</p>
         </Box>
         <Box>
           <Button label="Back" onClick={() => navigate("/")} />
@@ -52,6 +52,14 @@ const Wrapper = styled.section`
     gap: 10px;
   }
 
+  .contact-info > p {
+    font-size: 14px;
+  }
+
+  .big-btn,
+  .small-btn {
+    margin-top: 30px;
+  }
   .small-btn {
     display: none;
   }
