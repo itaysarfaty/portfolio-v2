@@ -20,15 +20,13 @@ export const ScrollPrompt = (props) => {
 
   return (
     <Wrapper>
-      {isVisible && (
-        <div className="scroll-prompt">
-          <div className="btn-wrapper">
-            <Button className="scroll-btn" onClick={props.onClick}>
-              <MdArrowDownward style={arrowStyle} />
-            </Button>
-          </div>
+      <div className={"scroll-prompt" + (isVisible ? "" : " hide")}>
+        <div className="btn-wrapper">
+          <Button className="scroll-btn" onClick={props.onClick}>
+            <MdArrowDownward style={arrowStyle} />
+          </Button>
         </div>
-      )}
+      </div>
     </Wrapper>
   );
 };
@@ -38,7 +36,10 @@ const arrowStyle = { fontSize: "1.2em" };
 const Wrapper = styled.div`
   height: 100%;
   position: relative;
-
+  .hide {
+    transition: 250ms;
+    opacity: 0;
+  }
   .scroll-btn {
     display: grid;
     align-items: center;
