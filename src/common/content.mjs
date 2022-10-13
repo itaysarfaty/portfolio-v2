@@ -20,13 +20,16 @@ export const TypingContent = [
 export const mySkills = [
   "Java Script",
   "Python",
-  "Git",
-  "React.js",
-  "Express.js",
   "Node.js",
+  "Express.js",
+  "React.js",
+  "Git",
   "Docker",
+  "HTML5",
+  "CSS",
   "UI/UX",
   "Adobe XD",
+  "Insomnia",
 ];
 
 export const myProjects = [
