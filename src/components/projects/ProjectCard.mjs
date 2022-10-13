@@ -36,6 +36,7 @@ const Wrapper = styled.div`
   .info > h1 {
     font-size: 24px;
     font-weight: 400;
+    margin-bottom: 10px;
   }
 
   .info > p {
