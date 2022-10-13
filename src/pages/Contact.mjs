@@ -21,17 +21,18 @@ export const ContactPage = () => {
   };
   return (
     <Wrapper>
-      <Container className="message-page">
-        <Box title="Email me">
-          <p>{copyState ? "Copied!" : "Press to copy"}</p>
+      <Container className="contact-page">
+        <Box className="contact-info" title="Email me">
+          <p>{copyState ? "Copied" : "Press to copy"}</p>
           <Button className="big-btn" label={myEmail} onClick={handleCopy} />
-          <Button className="small-btn" label="Email" onClick={handleCopy} />
+          <Button
+            className="small-btn"
+            label="Email"
+            onClick={handleCopy}
+          ></Button>
         </Box>
         <Box>
-          <Button
-            label="Cancel"
-            onClick={() => navigate("/", { replace: true })}
-          />
+          <Button label="Back" onClick={() => navigate("/")} />
         </Box>
       </Container>
     </Wrapper>
@@ -40,12 +41,15 @@ export const ContactPage = () => {
 
 const Wrapper = styled.section`
   height: 100vh;
-  .message-page {
+  .contact-page {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 50px;
+  }
+  .contact-info {
+    gap: 10px;
   }
 
   .small-btn {
