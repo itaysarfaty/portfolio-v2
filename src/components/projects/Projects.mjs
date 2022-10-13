@@ -17,6 +17,15 @@ import "swiper/css";
 
 export const Projects = () => {
   const [my_swiper, set_my_swiper] = useState({});
+
+  const nextSlide = () => {
+    my_swiper.slideNext();
+  };
+
+  const prevSlide = () => {
+    my_swiper.slidePrev();
+  };
+
   return (
     <Wrapper>
       <Container>
@@ -25,16 +34,10 @@ export const Projects = () => {
             <h1>Projects</h1>
             <p id="swipe-text">Swipe</p>
             <div className="swiper-controller-controls">
-              <Button
-                className="control-btn"
-                onClick={() => my_swiper.slidePrev()}
-              >
+              <Button className="control-btn" onClick={prevSlide}>
                 <MdArrowBack style={arrowStyle} />
               </Button>
-              <Button
-                className="control-btn"
-                onClick={() => my_swiper.slideNext()}
-              >
+              <Button className="control-btn" onClick={nextSlide}>
                 <MdArrowForward style={arrowStyle} />
               </Button>
             </div>
@@ -44,10 +47,9 @@ export const Projects = () => {
           <Swiper
             modules={[Navigation]}
             navigation
-            spaceBetween={0}
+            spaceBetween={50}
             slidesPerView={1}
             cssMode={true}
-            speed={600}
             loop={false}
             onInit={(ev) => {
               set_my_swiper(ev);
