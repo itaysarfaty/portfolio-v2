@@ -14,7 +14,6 @@ export const Hero = (props) => {
         <div className="content">
           <div className="img-wrapper">
             <div className="dotted-line" />
-
             <img src={HeadShot} alt="Itay Sarfaty's head shot." />
           </div>
           <h1 id="action-text">
@@ -68,17 +67,17 @@ const Wrapper = styled.section`
     position: relative;
     background-color: ${({ theme }) => theme.primaryColor};
     overflow: hidden;
-    border: ${({ theme }) => theme.darkBorder};
     border-radius: 200px;
     filter: ${({ theme }) => theme.dropShadow};
   }
 
-  img {
+  .img-wrapper > img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     display: block;
     border-radius: 200px;
+    border: ${({ theme }) => theme.darkBorder};
   }
 
   #action-text {
