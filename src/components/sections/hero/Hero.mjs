@@ -34,18 +34,22 @@ export const Hero = (props) => {
 
 const Wrapper = styled.section`
   height: 100%;
+  background-color: red;
 
   .hero {
     height: 100vh;
+    min-height: 630px;
     display: flex;
     flex-direction: column;
-    min-height: 630px;
+    background-color: green;
 
     padding-top: ${({ theme }) => theme.navBarHeight};
   }
 
   .content {
-    width: 100%;
+    background-color: yellow;
+
+    width: auto;
     height: 75%;
     padding-block: 10%;
     display: flex;
