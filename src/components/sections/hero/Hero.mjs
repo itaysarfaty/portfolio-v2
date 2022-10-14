@@ -5,7 +5,7 @@ import { Container } from "../../common/Container.mjs";
 import { ScrollPrompt } from "./ScrollPrompt.mjs";
 import { myFacts } from "../../../common/content.mjs";
 import { mdScreen, lgScreen } from "../../../themes/theme.mjs";
-import HeadShot from "../../../assets/head-shot.png";
+import HeadShot from "../../../assets/head-shot.webp";
 
 export const Hero = (props) => {
   return (
