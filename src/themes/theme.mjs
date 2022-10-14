@@ -15,7 +15,7 @@ export const darkTheme = {
 
 export const lightTheme = {
   primary: "#f9f9f9",
-  secondary: "#FAFAFA",
+  secondary: "#FDFDFD",
   tertiary: "#0F0F0F",
 };
 
