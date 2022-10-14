@@ -34,22 +34,18 @@ export const Hero = (props) => {
 
 const Wrapper = styled.section`
   height: 100%;
-  background-color: red;
 
   .hero {
     height: 100vh;
-    min-height: 630px;
     display: flex;
     flex-direction: column;
-    background-color: green;
+    min-height: 630px;
 
     padding-top: ${({ theme }) => theme.navBarHeight};
   }
 
   .content {
-    background-color: yellow;
-
-    width: auto;
+    width: 100%;
     height: 75%;
     padding-block: 10%;
     display: flex;
@@ -71,6 +67,7 @@ const Wrapper = styled.section`
     position: relative;
     background-color: ${({ theme }) => theme.primaryColor};
     overflow: hidden;
+    border: ${({ theme }) => theme.darkBorder};
     border-radius: 200px;
     filter: ${({ theme }) => theme.dropShadow};
   }
@@ -81,7 +78,6 @@ const Wrapper = styled.section`
     object-fit: cover;
     display: block;
     border-radius: 200px;
-    border: ${({ theme }) => theme.darkBorder};
   }
 
   #action-text {
