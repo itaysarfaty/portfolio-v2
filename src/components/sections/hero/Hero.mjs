@@ -15,7 +15,7 @@ export const Hero = (props) => {
           <div className="img-wrapper">
             <div className="dotted-line" />
 
-            <img src={HeadShot} alt="" />
+            <img src={HeadShot} alt="Itay Sarfaty's head shot." />
           </div>
           <h1 id="action-text">
             <Typewriter
