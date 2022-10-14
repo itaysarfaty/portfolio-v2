@@ -2,7 +2,7 @@ import age from "s-age";
 import { openLink } from "./utils.js";
 import { Project } from "../objects/project.mjs";
 
-export const TypingContent = [
+export const myFacts = [
   "My name is Itay",
   "Pronounced [EE-tie]",
   "I'm a developer",
