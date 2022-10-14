@@ -5,30 +5,32 @@ import { Box } from "../components/common/Box.mjs";
 import { Button } from "../components/common/Button.mjs";
 import { Container } from "../components/common/Container.mjs";
 import { useState } from "react";
+import { useWindowSize } from "../hooks/useWindowSize.mjs";
 
 export const ContactPage = () => {
   const navigate = useNavigate();
   const [copyState, setCopyState] = useState(false);
   const myEmail = "itaysarfaty@gmail.com";
+  const size = useWindowSize();
 
   const handleCopy = () => {
     setCopyState(true);
-
     setTimeout(() => {
       navigator.clipboard.writeText(myEmail);
       setCopyState(false);
     }, 4000);
   };
+
   return (
     <Wrapper>
       <Container className="contact-page">
         <Box className="contact-info" title="Email me">
-          <Button className="big-btn" label={myEmail} onClick={handleCopy} />
           <Button
-            className="small-btn"
-            label="Email"
+            className="email-btn"
+            label={size.width >= 375 ? myEmail : "Email"}
             onClick={handleCopy}
-          ></Button>
+            disabled={copyState}
+          />
           <p>{copyState ? "Copied" : "Press to copy"}</p>
         </Box>
         <Box>
@@ -56,23 +58,7 @@ const Wrapper = styled.section`
     font-size: 14px;
   }
 
-  .big-btn,
-  .small-btn {
+  .email-btn {
     margin-top: 30px;
-  }
-  .small-btn {
-    display: none;
-  }
-  .big-btn {
-    display: block;
-  }
-
-  @media (max-width: 375px) {
-    .small-btn {
-      display: block;
-    }
-    .big-btn {
-      display: none;
-    }
   }
 `;
