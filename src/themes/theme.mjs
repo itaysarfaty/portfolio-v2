@@ -4,15 +4,19 @@ export const mdScreen = "769px";
 export const lgScreen = "1024px";
 
 export const darkTheme = {
-  primary: "#121212",
-  secondary: "#141414",
+  primary: "#0F0F0F",
+  secondary: "#111111",
   tertiary: "#ffffff",
+
+  // primary: "#080418",
+  // secondary: "#0A061D",
+  // tertiary: "#ffffff",
 };
 
 export const lightTheme = {
   primary: "#f9f9f9",
   secondary: "#ffffff",
-  tertiary: "#040504",
+  tertiary: "#0F0F0F",
 };
 
 export const theme = (isDarkTheme) => {
