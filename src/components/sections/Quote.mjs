@@ -32,13 +32,11 @@ const Wrapper = styled.section`
   }
 
   .text > h1 {
-    font-size: 34px;
-    line-height: 50px;
-    margin-bottom: 68px;
+    margin-bottom: 35px;
   }
 
   .text > h2 {
-    font-size: 23px;
+    font-size: 22px;
   }
 
   @media (min-width: ${lgScreen}) {
@@ -50,7 +48,6 @@ const Wrapper = styled.section`
     .text > h1 {
       font-size: 40px;
       line-height: 60px;
-      margin-bottom: 50px;
     }
 
     .text > h2 {
