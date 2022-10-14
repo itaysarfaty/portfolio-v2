@@ -33,10 +33,11 @@ export const mySkills = [
 ];
 
 export const myProjects = [
-  new Project("This Website", "React.js", () => {}),
   new Project("Management System", "Fullstack", () =>
     openLink("https://github.com/itaysarfaty/FitTrack")
   ),
+  new Project("This Website", "React.js", null),
+
   new Project("Nutrition Coach", "Entity Relationship Diagram", () =>
     openLink("/jportal-erd.svg")
   ),

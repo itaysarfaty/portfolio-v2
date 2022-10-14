@@ -17,6 +17,7 @@ import "swiper/css";
 
 export const Projects = () => {
   const [my_swiper, set_my_swiper] = useState({});
+  const [slideState, setSlideState] = useState(0);
 
   const nextSlide = () => {
     my_swiper.slideNext();
@@ -34,10 +35,18 @@ export const Projects = () => {
             <h1>Projects</h1>
             <p id="swipe-text">Swipe</p>
             <div className="swiper-controller-controls">
-              <Button className="control-btn" onClick={prevSlide}>
+              <Button
+                className="control-btn"
+                onClick={prevSlide}
+                disabled={slideState === 0}
+              >
                 <MdArrowBack style={arrowStyle} />
               </Button>
-              <Button className="control-btn" onClick={nextSlide}>
+              <Button
+                className="control-btn"
+                onClick={nextSlide}
+                disabled={slideState === myProjects.length - 1}
+              >
                 <MdArrowForward style={arrowStyle} />
               </Button>
             </div>
@@ -51,6 +60,7 @@ export const Projects = () => {
             slidesPerView={1}
             cssMode={true}
             loop={false}
+            onSlideChange={() => setSlideState(my_swiper.activeIndex)}
             onInit={(ev) => {
               set_my_swiper(ev);
             }}

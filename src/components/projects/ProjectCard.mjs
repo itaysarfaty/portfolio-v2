@@ -10,7 +10,12 @@ export const ProjectCard = (props) => {
             <h1>{props.title}</h1>
             <p>{props.type}</p>
           </div>
-          <Button className="cta" label="Open" onClick={props.action} />
+          <Button
+            className="cta"
+            label="Open"
+            onClick={props.action}
+            disabled={props.action === null}
+          />
         </div>
       </div>
     </Wrapper>

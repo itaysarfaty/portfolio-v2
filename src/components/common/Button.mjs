@@ -3,7 +3,11 @@ import { smScreen } from "../../themes/theme.mjs";
 
 export const Button = (props) => {
   return (
-    <Wrapper className={props.className} onClick={props.onClick}>
+    <Wrapper
+      className={props.className}
+      onClick={props.onClick}
+      disabled={props.disabled}
+    >
       {props.children}
       {props.label}
     </Wrapper>
@@ -16,8 +20,15 @@ const Wrapper = styled.button`
   height: 60px;
   border-radius: 100px;
   width: 100%;
+  transition: opacity 500ms;
 
   filter: ${({ theme }) => theme.dropShadow};
+
+  :disabled,
+  [disabled] {
+    opacity: 0.4;
+    pointer-events: none;
+  }
 
   @media (hover: hover) {
     :hover {
