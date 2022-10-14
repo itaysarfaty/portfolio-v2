@@ -20,7 +20,7 @@ const Wrapper = styled.button`
   height: 60px;
   border-radius: 100px;
   width: 100%;
-  transition: opacity 500ms;
+  transition: opacity 250ms;
 
   filter: ${({ theme }) => theme.dropShadow};
 
