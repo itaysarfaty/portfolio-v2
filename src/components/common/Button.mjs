@@ -4,6 +4,7 @@ import { smScreen } from "../../themes/theme.mjs";
 export const Button = (props) => {
   return (
     <Wrapper
+      ref={props.setRef}
       className={props.className}
       onClick={props.onClick}
       disabled={props.disabled}
