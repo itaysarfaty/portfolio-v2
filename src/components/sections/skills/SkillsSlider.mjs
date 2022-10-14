@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { smScreen } from "../../../themes/theme.mjs";
+import { mdScreen, smScreen } from "../../../themes/theme.mjs";
 import { Skill } from "./Skill.mjs";
 import { mySkills } from "../../../common/content.mjs";
 
@@ -32,6 +32,7 @@ const Wrapper = styled.div`
 
   --animation-speed: ${2.7 * mySkills.length + "s"};
   --animation-delay: calc(var(--animation-speed) / 2);
+  --skill-list-width: ${170 * mySkills.length + "px"};
 
   .skills-list {
     display: flex;
@@ -39,13 +40,12 @@ const Wrapper = styled.div`
     justify-content: space-around;
     position: absolute;
     flex-shrink: 0;
-    width: ${170 * mySkills.length + "px"};
-    animation: slide var(--animation-speed) linear infinite;
+    width: var(--skill-list-width);
+    animation: slide-small var(--animation-speed) linear infinite;
   }
 
   .skills-list.delay {
-    transform: translateX(100%);
-    animation-name: slide;
+    transform: translateX(50%);
     animation-delay: var(--animation-delay);
   }
 
@@ -79,12 +79,27 @@ const Wrapper = styled.div`
     }
   }
 
+  @media (min-width: ${mdScreen}) {
+    .skills-list {
+      animation: slide var(--animation-speed) linear infinite;
+    }
+  }
+
   @keyframes slide {
     from {
-      transform: translateX(100%);
+      transform: translateX(50%);
     }
     to {
-      transform: translateX(-100%);
+      transform: translateX(-150%);
+    }
+  }
+
+  @keyframes slide-small {
+    from {
+      transform: translateX(15%);
+    }
+    to {
+      transform: translateX(-185%);
     }
   }
 `;
