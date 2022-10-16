@@ -12,5 +12,9 @@ export const router = (props) => {
       path: "/contact",
       element: <ContactPage />,
     },
+    {
+      path: "*",
+      element: <ContactPage />,
+    },
   ]);
 };
