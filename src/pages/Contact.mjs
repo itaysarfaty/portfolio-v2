@@ -15,8 +15,9 @@ export const ContactPage = () => {
 
   const handleCopy = () => {
     setCopyState(true);
+    navigator.clipboard.writeText(myEmail);
+
     setTimeout(() => {
-      navigator.clipboard.writeText(myEmail);
       setCopyState(false);
     }, 4000);
   };
