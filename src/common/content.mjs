@@ -19,17 +19,18 @@ export const myFacts = [
 
 export const mySkills = [
   "Java Script",
-  "Python",
   "Node.js",
-  "Express.js",
+  "Express JS",
+  "Rest API",
   "React.js",
   "Git",
+  "Python",
   "Docker",
   "HTML5",
   "CSS",
   "UI/UX",
   "Adobe XD",
-  "Insomnia",
+  "VScode",
 ];
 
 export const myProjects = [
