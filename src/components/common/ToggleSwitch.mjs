@@ -27,7 +27,7 @@ export const ToggleSwitch = (props) => {
 const Wrapper = styled.label`
   display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 15px;
   cursor: pointer;
   font-size: 14px;

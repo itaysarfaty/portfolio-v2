@@ -7,7 +7,7 @@ export const Footer = (props) => {
   return (
     <Wrapper>
       <Container className="footer">
-        <h3>Designed in Adobe XD Built with React.js</h3>
+        <h3>Built with React.js</h3>
         <ToggleSwitch callBack={props.themeToggle} />
 
         <h3>© 2022 Itay Sarfaty</h3>
@@ -22,6 +22,7 @@ const Wrapper = styled.footer`
     align-items: center;
     justify-content: center;
     gap: 5px;
+    margin-bottom: 30px;
     height: 140px;
     text-align: center;
   }
@@ -47,6 +48,7 @@ const Wrapper = styled.footer`
       flex-direction: row-reverse;
       gap: none;
       justify-content: space-between;
+      margin-bottom: 0px;
     }
   }
 `;
