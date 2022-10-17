@@ -13,7 +13,6 @@ export const Hero = (props) => {
       <Container className="hero">
         <div className="content">
           <div className="img-wrapper">
-            <div className="dotted-line" />
             <img src={HeadShot} alt="Itay Sarfaty's head shot." />
           </div>
           <h1 id="action-text">
@@ -85,21 +84,7 @@ const Wrapper = styled.section`
     height: 85px;
   }
 
-  .dotted-line {
-    display: none;
-    position: absolute;
-    left: 50%;
-    bottom: -50vh;
-    height: 50vh;
-    width: 1px;
-    border-left: ${({ theme }) => theme.lightBorder};
-    z-index: -1;
-  }
-
   @media (min-width: ${mdScreen}) {
-    .dotted-line {
-      display: block;
-    }
     .content {
       flex: 4;
       flex-direction: row;
