@@ -9,8 +9,6 @@ export const Footer = (props) => {
       <Container className="footer">
         <h3>Built with React.js</h3>
         <ToggleSwitch callBack={props.themeToggle} />
-
-        <h3>© 2022 Itay Sarfaty</h3>
       </Container>
     </Wrapper>
   );

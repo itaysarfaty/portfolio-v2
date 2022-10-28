@@ -12,6 +12,8 @@ export const ToggleSwitch = (props) => {
 
   return (
     <Wrapper className={props.className}>
+      <span>Turn {checked ? "off" : "on"} the lights</span>
+
       <input
         className="input"
         checked={checked}
@@ -19,7 +21,6 @@ export const ToggleSwitch = (props) => {
         onChange={handleChange}
       />
       <div className="switch" />
-      <span>Turn {checked ? "off" : "on"} the lights</span>
     </Wrapper>
   );
 };
