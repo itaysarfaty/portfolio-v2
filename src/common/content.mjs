@@ -24,20 +24,26 @@ export const mySkills = [
   "Rest API",
   "React.js",
   "Git",
+  "Prisma",
   "Python",
+  "Postman",
   "Docker",
   "HTML5",
   "CSS",
+  "React Router",
   "UI/UX",
   "Adobe XD",
-  "VScode",
 ];
 
 export const myProjects = [
   new Project("Management System", "Fullstack", () =>
     openLink("https://github.com/itaysarfaty/FitTrack")
   ),
-  new Project("This Website", "React.js", null),
+  new Project(
+    "This Website",
+    "React.js",
+    "https://github.com/itaysarfaty/portfolio-v2"
+  ),
 
   new Project("Nutrition Coach", "Entity Relationship Diagram", () =>
     openLink("/jportal-erd.svg")
