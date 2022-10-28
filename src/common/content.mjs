@@ -39,10 +39,8 @@ export const myProjects = [
   new Project("Management System", "Fullstack", () =>
     openLink("https://github.com/itaysarfaty/FitTrack")
   ),
-  new Project(
-    "This Website",
-    "React.js",
-    "https://github.com/itaysarfaty/portfolio-v2"
+  new Project("This Website", "React.js", () =>
+    openLink("https://github.com/itaysarfaty/portfolio-v2")
   ),
 
   new Project("Nutrition Coach", "Entity Relationship Diagram", () =>
