@@ -36,14 +36,14 @@ export const mySkills = [
 ];
 
 export const myProjects = [
-  new Project("Management System", "Fullstack", () =>
+  new Project("Weight Tracker", "Fullstack", () =>
     openLink("https://github.com/itaysarfaty/FitTrack")
   ),
   new Project("This Website", "React.js", () =>
     openLink("https://github.com/itaysarfaty/portfolio-v2")
   ),
 
-  new Project("Nutrition Coach", "Entity Relationship Diagram", () =>
+  new Project("Nutrition Coach Data", "Entity Relationship Diagram", () =>
     openLink("/jportal-erd.svg")
   ),
   new Project("The Kitchen Guy", "Gatsby.js", () =>
