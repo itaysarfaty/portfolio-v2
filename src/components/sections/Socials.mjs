@@ -22,17 +22,17 @@ export const Socials = () => {
           </Button>
           <Button
             className="btn"
-            label="Behance"
-            onClick={() => openLink("https://www.behance.net/itaysarfaty")}
-          >
-            <SiBehance style={arrowStyle} />
-          </Button>
-          <Button
-            className="btn"
             label="Github"
             onClick={() => openLink("https://github.com/itaysarfaty")}
           >
             <VscGithub style={arrowStyle} />
+          </Button>
+          <Button
+            className="btn"
+            label="Behance"
+            onClick={() => openLink("https://www.behance.net/itaysarfaty")}
+          >
+            <SiBehance style={arrowStyle} />
           </Button>
         </Box>
       </Container>
