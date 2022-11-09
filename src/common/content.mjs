@@ -23,11 +23,11 @@ export const mySkills = [
   "Express JS",
   "Rest API",
   "React.js",
+  "SQL",
   "Git",
   "Prisma",
   "Python",
   "Postman",
-  "Docker",
   "HTML5",
   "CSS",
   "React Router",
@@ -39,20 +39,16 @@ export const myProjects = [
   new Project("Weight Tracker", "Fullstack", () =>
     openLink("https://github.com/itaysarfaty/FitTrack")
   ),
+  new Project("Nutrition Coach DB", "Entity Relationship Diagram", () =>
+    openLink("/jportal-erd.svg")
+  ),
   new Project("This Website", "React.js", () =>
     openLink("https://github.com/itaysarfaty/portfolio-v2")
-  ),
-
-  new Project("Nutrition Coach Data", "Entity Relationship Diagram", () =>
-    openLink("/jportal-erd.svg")
   ),
   new Project("The Kitchen Guy", "Gatsby.js", () =>
     openLink("https://portfolio.thekitchenguy.pro/")
   ),
   new Project("The Kitchen Guy", "Webflow", () =>
     openLink("https://www.thekitchenguy.pro/")
-  ),
-  new Project("Music Card", "HTML/CSS", () =>
-    openLink("https://music-card.pages.dev/")
   ),
 ];
