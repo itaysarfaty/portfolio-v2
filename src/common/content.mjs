@@ -18,6 +18,7 @@ export const myFacts = [
 ];
 
 export const mySkills = [
+  "Typescript",
   "Java Script",
   "Node.js",
   "Express JS",
@@ -36,7 +37,7 @@ export const mySkills = [
 ];
 
 export const myProjects = [
-  new Project("Visualize Bubble Sort", "TypeScript/React", () =>
+  new Project("Visualize Bubble Sort", "TypeScript & React.js", () =>
     openLink("https://bubble-sort-visualizer.pages.dev/")
   ),
   new Project("Weight Tracker", "Fullstack", () =>
