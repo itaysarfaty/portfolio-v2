@@ -37,10 +37,13 @@ export const mySkills = [
 ];
 
 export const myProjects = [
-  new Project("Visualize Bubble Sort", "TypeScript & React.js", () =>
+  new Project("Bubble Sort Visualizer", "TypeScript & React.js", () =>
     openLink("https://bubble-sort-visualizer.pages.dev/")
   ),
-  new Project("Weight Tracker", "Fullstack", () =>
+  new Project("Vanilla Form", "TypeScript", () =>
+    openLink("https://github.com/itaysarfaty/vanilla-form")
+  ),
+  new Project("Weight Tracker", "Python & React.js", () =>
     openLink("https://github.com/itaysarfaty/FitTrack")
   ),
   new Project("Nutrition Coach DB", "Entity Relationship Diagram", () =>
