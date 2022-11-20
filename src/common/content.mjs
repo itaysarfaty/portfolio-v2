@@ -20,23 +20,26 @@ export const myFacts = [
 export const mySkills = [
   "Typescript",
   "Java Script",
+  "Python",
   "Node.js",
   "Express JS",
-  "Rest API",
   "React.js",
+  "Rest API",
+  "OOP",
   "SQL",
   "Git",
-  "Prisma",
-  "Python",
   "Postman",
   "HTML5",
   "CSS",
-  "React Router",
   "UI/UX",
   "Adobe XD",
 ];
 
 export const myProjects = [
+  new Project("Algorithm Performance API", "TypeScript & Express JS", () =>
+    openLink("https://github.com/itaysarfaty/compare-sorts")
+  ),
+
   new Project("Bubble Sort Visualizer", "TypeScript & React.js", () =>
     openLink("https://bubble-sort-visualizer.pages.dev/")
   ),
