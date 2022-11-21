@@ -1,7 +1,7 @@
 export class Project {
-  constructor(title, type, action) {
+  constructor(title, tags, action) {
     this.title = title;
-    this.type = type;
+    this.tags = tags;
     this.action = action;
   }
 }

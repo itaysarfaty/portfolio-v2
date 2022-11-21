@@ -66,7 +66,7 @@ export const Projects = () => {
               <SwiperSlide key={i}>
                 <ProjectCard
                   title={project.title}
-                  type={project.type}
+                  tags={project.tags}
                   action={project.action}
                 />
               </SwiperSlide>

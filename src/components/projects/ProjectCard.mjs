@@ -8,7 +8,7 @@ export const ProjectCard = (props) => {
         <div className="content">
           <div className="info">
             <h1>{props.title}</h1>
-            <p>{props.type}</p>
+            <Tags tags={props.tags} />
           </div>
           <Button
             className="cta"
@@ -19,6 +19,24 @@ export const ProjectCard = (props) => {
         </div>
       </div>
     </Wrapper>
+  );
+};
+
+const Tags = (props) => {
+  const numDividers = props.tags.length - 1;
+  return (
+    <div className="tags-wrapper">
+      <div className="tags-content">
+        {props.tags.map((tag, i) => {
+          return (
+            <div className="tag" key={i}>
+              <p>{tag}</p>
+              {i < numDividers && <div className="divider" />}
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 };
 
@@ -35,13 +53,18 @@ const Wrapper = styled.div`
   }
 
   .info {
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    align-items: center;
+
+    gap: 10px;
   }
 
   .info > h1 {
     font-size: 24px;
     font-weight: 400;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
 
   .info > p {
@@ -52,6 +75,31 @@ const Wrapper = styled.div`
     margin-inline: auto;
   }
 
+  .tags-wrapper {
+    border: ${({ theme }) => theme.lightBorder};
+    border-radius: 8px;
+    padding-inline: 30px;
+    width: fit-content;
+  }
+  .tags-content {
+    display: flex;
+  }
+  .tag {
+    display: flex;
+    align-items: center;
+  }
+  .tag > p {
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+  .divider {
+    width: 0.2px;
+    height: 50%;
+    background-color: ${({ theme }) => theme.tertiaryColor};
+    margin-inline: 20px;
+    opacity: 0.5;
+  }
+
   @media (min-width: ${smScreen}) {
     .info > h1 {
       font-size: 28px;
@@ -59,17 +107,24 @@ const Wrapper = styled.div`
   }
 
   @media (min-width: ${mdScreen}) {
+    .tag > p {
+      font-size: 14px;
+    }
+    .tags-wrapper {
+      padding-block: 6px;
+    }
+
     .content {
-      display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
     }
-    .info {
-      text-align: left;
-    }
+
     .cta {
       margin-inline: 0;
+    }
+    .info {
+      align-items: left;
     }
   }
 `;
