@@ -36,29 +36,29 @@ export const mySkills = [
 ];
 
 export const myProjects = [
-  new Project("Algorithm Performance API", "TypeScript & Express JS", () =>
+  new Project("Algorithm Performance API", ["TypeScript", "Express JS"], () =>
     openLink("https://github.com/itaysarfaty/compare-sorts")
   ),
 
-  new Project("Bubble Sort Visualizer", "TypeScript & React.js", () =>
+  new Project("Bubble Sort Visualizer", ["TypeScript ", "React.js"], () =>
     openLink("https://bubble-sort-visualizer.pages.dev/")
   ),
-  new Project("Vanilla Form", "TypeScript", () =>
+  new Project("Vanilla Form", ["TypeScript"], () =>
     openLink("https://github.com/itaysarfaty/vanilla-form")
   ),
-  new Project("Weight Tracker", "Python & React.js", () =>
+  new Project("Weight Tracker", ["Python ", "React.js"], () =>
     openLink("https://github.com/itaysarfaty/FitTrack")
   ),
-  new Project("Nutrition Coach DB", "Entity Relationship Diagram", () =>
+  new Project("Nutrition Coach DB", ["Entity Relationship Diagram"], () =>
     openLink("/jportal-erd.svg")
   ),
-  new Project("This Website", "React.js", () =>
+  new Project("This Website", ["React.js"], () =>
     openLink("https://github.com/itaysarfaty/portfolio-v2")
   ),
-  new Project("The Kitchen Guy", "Gatsby.js", () =>
+  new Project("The Kitchen Guy", ["Gatsby.js", "AWS Lambda"], () =>
     openLink("https://portfolio.thekitchenguy.pro/")
   ),
-  new Project("The Kitchen Guy", "Webflow", () =>
+  new Project("The Kitchen Guy", ["Webflow"], () =>
     openLink("https://www.thekitchenguy.pro/")
   ),
 ];
