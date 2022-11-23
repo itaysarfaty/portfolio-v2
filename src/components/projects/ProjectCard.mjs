@@ -58,7 +58,7 @@ const Wrapper = styled.div`
     text-align: center;
     align-items: center;
 
-    gap: 10px;
+    gap: 15px;
   }
 
   .info > h1 {
@@ -77,7 +77,7 @@ const Wrapper = styled.div`
 
   .tags-wrapper {
     border: ${({ theme }) => theme.lightBorder};
-    border-radius: 8px;
+    border-radius: 100px;
     padding-inline: 30px;
     width: fit-content;
   }
@@ -124,6 +124,7 @@ const Wrapper = styled.div`
       margin-inline: 0;
     }
     .info {
+      gap: 20px;
       align-items: left;
     }
   }
