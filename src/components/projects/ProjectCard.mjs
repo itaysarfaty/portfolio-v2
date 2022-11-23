@@ -6,7 +6,7 @@ export const ProjectCard = (props) => {
     <Wrapper>
       <div className="card">
         <div className="content">
-          <div className="info">
+          <div className="content-info">
             <h1>{props.title}</h1>
             <Tags tags={props.tags} />
           </div>
@@ -52,7 +52,7 @@ const Wrapper = styled.div`
     gap: 30px;
   }
 
-  .info {
+  .content-info {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -61,13 +61,13 @@ const Wrapper = styled.div`
     gap: 15px;
   }
 
-  .info > h1 {
+  .content-info > h1 {
     font-size: 24px;
     font-weight: 400;
     margin-bottom: 0px;
   }
 
-  .info > p {
+  .content-info > p {
     font-weight: 200;
   }
 
@@ -101,7 +101,7 @@ const Wrapper = styled.div`
   }
 
   @media (min-width: ${smScreen}) {
-    .info > h1 {
+    .content-info > h1 {
       font-size: 28px;
     }
   }
@@ -111,7 +111,7 @@ const Wrapper = styled.div`
       font-size: 14px;
     }
     .tags-wrapper {
-      padding-block: 6px;
+      padding-block: 2px;
     }
 
     .content {
@@ -123,9 +123,9 @@ const Wrapper = styled.div`
     .cta {
       margin-inline: 0;
     }
-    .info {
+    .content-info {
       gap: 20px;
-      align-items: left;
+      align-items: flex-start;
     }
   }
 `;
