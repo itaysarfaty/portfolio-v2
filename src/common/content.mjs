@@ -43,7 +43,7 @@ export const myProjects = [
   new Project("Bubble Sort Visualizer", ["TypeScript ", "React.js"], () =>
     openLink("https://bubble-sort-visualizer.pages.dev/")
   ),
-  new Project("Vanilla Form", ["TypeScript"], () =>
+  new Project("Vanilla Form", ["TypeScript", "HTML5"], () =>
     openLink("https://github.com/itaysarfaty/vanilla-form")
   ),
   new Project("Weight Tracker", ["Python ", "React.js"], () =>
