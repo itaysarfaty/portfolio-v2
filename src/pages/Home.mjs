@@ -41,7 +41,7 @@ export const Home = (props) => {
       <Navbar sectionState={{ about, projects, quote }} scrollTo={scrollTo} />
       <section ref={aboutRef} className="about">
         <Hero scrollHandler={scrollTo.education} />
-        <Education setRef={educationRef} />
+        {/* <Education setRef={educationRef} /> */}
         <Skills />
       </section>
       <section ref={projectsRef} className="projects">
