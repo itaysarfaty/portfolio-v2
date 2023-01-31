@@ -1,42 +1,40 @@
-import age from "s-age";
 import { openLink } from "./utils.js";
 import { Project } from "../objects/project.mjs";
 
 export const myFacts = [
-  "My name is Itay",
+  "I'm Itay",
   "Pronounced [EE-tie]",
-  "I'm a developer",
-  "I enjoy solving problems",
-  "I'm product oriented",
-  "You know elephants can't jump?",
+  "I'm a UI Engineer",
+  "I prioritize the end user",
+  "I use a human-centric approach",
   "I speak 2 languages",
-  "My favorite colors are black & white",
-  `I'm ${age("Nov 3 1999")} years old`,
-  "Do aliens exists?",
   "You're still here?",
   "Scroll down!",
 ];
 
 export const mySkills = [
-  "Typescript",
-  "Java Script",
-  "Python",
-  "Node.js",
-  "Express JS",
+  "JavaScript",
+  "TypeScript",
   "React.js",
-  "Rest API",
-  "OOP",
-  "SQL",
-  "Git",
-  "Postman",
+  "Express JS",
+  "Node.js",
   "HTML5",
   "CSS",
   "UI/UX",
   "Adobe XD",
+  "Rest API",
+  "xState",
+  "OOP",
+  "SQL",
+  "Python",
+  "Jest",
+  "Storybook",
+  "Git",
+  "Postman",
 ];
 
 export const myProjects = [
-  new Project("Algorithm Performance API", ["TypeScript", "Express JS"], () =>
+  new Project("Algorithm API", ["TypeScript", "Express JS"], () =>
     openLink("https://github.com/itaysarfaty/compare-sorts")
   ),
 
