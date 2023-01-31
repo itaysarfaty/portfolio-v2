@@ -38,7 +38,7 @@ export const Navbar = ({ sectionState, scrollTo }) => {
         <div className="btn-wrapper">
           <Button
             className="action-btn"
-            label="Hire me"
+            label="Contact"
             onClick={() => navigate("/contact", { replace: false })}
           />
         </div>
