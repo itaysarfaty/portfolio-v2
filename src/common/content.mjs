@@ -4,10 +4,10 @@ import { Project } from "../objects/project.mjs";
 export const myFacts = [
   "I'm Itay",
   "Pronounced [EE-tie]",
-  "I'm a UI Engineer",
+  "I'm a UI/UX Developer",
   "I prioritize the end user",
   "I use a human-centric approach",
-  "I speak 2 languages",
+  "I work at CargoMatrix Inc.",
   "You're still here?",
   "Scroll down!",
 ];
@@ -31,6 +31,8 @@ export const mySkills = [
   "Storybook",
   "Git",
   "Postman",
+  "Power Apps",
+  "Dataverse",
 ];
 
 export const myProjects = [

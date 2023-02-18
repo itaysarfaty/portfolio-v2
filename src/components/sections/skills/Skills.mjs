@@ -8,7 +8,7 @@ import { SkillsSlider } from "./SkillsSlider.mjs";
 import { Entry } from "../Education.mjs";
 
 export const Skills = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
     <Wrapper>
       <Container>
@@ -17,10 +17,10 @@ export const Skills = () => {
             <SkillsSlider />
           </Entry>
           <div className="btn-wrapper">
-            <Button
+            {/* <Button
               label="Request resume"
               onClick={() => navigate("/contact")}
-            ></Button>
+            ></Button> */}
           </div>
         </Box>
       </Container>
@@ -30,6 +30,7 @@ export const Skills = () => {
 
 const Wrapper = styled.section`
   padding-top: 50px;
+
   width: 100%;
 
   .btn-wrapper {
