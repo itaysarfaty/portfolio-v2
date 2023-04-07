@@ -36,18 +36,14 @@ export const mySkills = [
 ];
 
 export const myProjects = [
+  new Project("Weight Tracker", ["Python ", "React.js"], () =>
+    openLink("https://www.youtube.com/watch?v=p7LKRz_m1nk")
+  ),
   new Project("Algorithm API", ["TypeScript", "Express JS"], () =>
     openLink("https://github.com/itaysarfaty/compare-sorts")
   ),
-
   new Project("Bubble Sort Visualizer", ["TypeScript ", "React.js"], () =>
     openLink("https://bubble-sort-visualizer.pages.dev/")
-  ),
-  new Project("Vanilla Form", ["TypeScript", "HTML5"], () =>
-    openLink("https://github.com/itaysarfaty/vanilla-form")
-  ),
-  new Project("Weight Tracker", ["Python ", "React.js"], () =>
-    openLink("https://github.com/itaysarfaty/FitTrack")
   ),
   new Project("Nutrition Coach DB", ["Entity Relationship Diagram"], () =>
     openLink("/jportal-erd.svg")
