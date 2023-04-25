@@ -95,7 +95,7 @@ const Wrapper = styled.div`
     height: 50%;
     background-color: ${({ theme }) => theme.tertiaryColor};
     margin-inline: 20px;
-    opacity: 0.5;
+    opacity: 0.2;
   }
 
   @media (min-width: ${smScreen}) {
