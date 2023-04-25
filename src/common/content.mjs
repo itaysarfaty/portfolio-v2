@@ -36,6 +36,9 @@ export const mySkills = [
 ];
 
 export const myProjects = [
+  new Project("CORPWRIT", ["ChatGPT ", "React.js"], () =>
+    openLink("https://www.corpwrit.xyz/")
+  ),
   new Project("Weight Tracker", ["Python ", "React.js"], () =>
     openLink("https://www.youtube.com/watch?v=p7LKRz_m1nk")
   ),

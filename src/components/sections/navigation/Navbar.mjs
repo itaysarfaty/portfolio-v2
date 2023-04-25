@@ -15,24 +15,12 @@ export const Navbar = ({ sectionState, scrollTo }) => {
           <NavButton
             label="About"
             onClick={scrollTo.about}
-            active={
-              sectionState.about ||
-              !(
-                sectionState.about ||
-                sectionState.projects ||
-                sectionState.quote
-              )
-            }
+            active={sectionState.about}
           />
           <NavButton
             label="Projects"
             onClick={scrollTo.projects}
-            active={sectionState.projects && !sectionState.quote}
-          />
-          <NavButton
-            label="Motto"
-            onClick={scrollTo.quote}
-            active={sectionState.quote}
+            active={sectionState.projects}
           />
         </div>
         <div className="btn-wrapper">
@@ -68,8 +56,8 @@ const Wrapper = styled.nav`
     display: none;
     width: 40%;
     max-width: 400px;
-    justify-content: space-between;
-    gap: 10%;
+    justify-content: flex-start;
+    gap: 40px;
   }
 
   .btn-wrapper {

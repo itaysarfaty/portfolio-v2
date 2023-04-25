@@ -76,9 +76,7 @@ const Wrapper = styled.div`
   }
 
   .tags-wrapper {
-    border: ${({ theme }) => theme.lightBorder};
-    border-radius: 100px;
-    padding-inline: 30px;
+    border-bottom: ${({ theme }) => theme.lightBorder};
     width: fit-content;
   }
   .tags-content {
@@ -124,7 +122,7 @@ const Wrapper = styled.div`
       margin-inline: 0;
     }
     .content-info {
-      gap: 20px;
+      gap: 10px;
       align-items: flex-start;
     }
   }

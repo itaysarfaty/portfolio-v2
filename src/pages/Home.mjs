@@ -18,7 +18,6 @@ export const Home = (props) => {
   // Keep track of what section is above the fold
   const about = useIsInViewport(aboutRef);
   const projects = useIsInViewport(projectsRef);
-  const quote = useIsInViewport(quoteRef);
 
   const scrollOptions = { behavior: "smooth" };
   const scrollTo = {
@@ -28,7 +27,6 @@ export const Home = (props) => {
         ...scrollOptions,
         ...{ block: "center" },
       }),
-    quote: () => quoteRef.current.scrollIntoView(scrollOptions),
     education: () =>
       educationRef.current.scrollIntoView({
         ...scrollOptions,
@@ -38,7 +36,7 @@ export const Home = (props) => {
 
   return (
     <>
-      <Navbar sectionState={{ about, projects, quote }} scrollTo={scrollTo} />
+      <Navbar sectionState={{ about, projects }} scrollTo={scrollTo} />
       <section ref={aboutRef} className="about">
         <Hero scrollHandler={scrollTo.education} />
         {/* <Education setRef={educationRef} /> */}
